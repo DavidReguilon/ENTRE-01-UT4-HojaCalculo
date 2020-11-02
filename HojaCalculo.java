@@ -1,4 +1,3 @@
-
 /**
  *  Un objeto de esta clase representa a una sencilla
  *  hoja de cálculo. La hoja tiene hasta un máximo de 3 filas (no más)
@@ -10,11 +9,13 @@
  */
 public class HojaCalculo
 {
+   //ATRIBUTOS
     private String nombre;
     private Fila fila1;
     private Fila fila2;
     private Fila fila3;
-
+    //CONSTANTES
+    
     /**
      * Constructor  
      * Crea la hoja de cálculo con el nombre indicado 
@@ -32,52 +33,41 @@ public class HojaCalculo
     /**
      * accesor para el nombre de la hoja
      */
-    public String getNombre() {
-        return this.nombre;
-
-    }
+    public String getNombre(){return this.nombre;}
 
     /**
      * accesor para la fila1
      */
-    public Fila getFila1() {
-        return fila1;
-
-    }
+    public Fila getFila1(){return fila1;}
 
     /**
      * accesor para la fila2
      */
-    public Fila getFila2() {
-        return fila2;
-
-    }
+    public Fila getFila2(){return fila2;}
 
     /**
      * accesor para la fila3
      */
-    public Fila getFila3() {
-        return fila3;
-
-    }
+    public Fila getFila3(){return fila3;}
 
     /**
      * Devuelve el nº de filas de la hoja
      * (dependerá de cuántas filas estén a null)
      */
-    public int getNumeroFilas() {
-        
-        return 0;
-
-    }
-
-    /**
+    public int getNumeroFilas(){
+        int numeroFilasLlenas = 0;
+        if(fila1 != null){ numeroFilasLlenas +=1;}
+        if(fila2 != null){ numeroFilasLlenas +=1;}
+        if(fila3 != null){ numeroFilasLlenas +=1;}
+        return numeroFilasLlenas;}    /**
      * Devuelve true si la hoja está completa
      * (tiene exactamente 3 filas)
      */
     public boolean hojaCompleta() {
+        if (fila1!=null && fila2!=null && fila3!=null){
         return true;
-
+    }
+        return true;
     }
 
     /**
@@ -87,6 +77,7 @@ public class HojaCalculo
      * si se añade como primera, segunda o tercera fila (no han de quedar huecos)
      */
     public void addFila(Fila fila) {
+         Fila fila4 = fila;
          
 
     }
@@ -146,10 +137,23 @@ public class HojaCalculo
      * Al duplicar la hoja se duplicarán también las filas que contenga
      */
     public HojaCalculo duplicarHoja() {
-        
-        
-        
-       return null;
+        HojaCalculo OtraHoja = new HojaCalculo("Duplicada HojaX");
+
+     switch(getNumeroFilas())
+     {
+     case 3:
+     Fila nuevaFila3 = fila3.duplicar();
+     OtraHoja.addFila(nuevaFila3);
+    
+     case 2:
+     Fila nuevaFila2 = fila2.duplicar();
+     OtraHoja.addFila(nuevaFila2);
+    
+     case 1:
+     Fila nuevaFila1 = fila1.duplicar();
+     OtraHoja.addFila(nuevaFila1);
+     }
+     return OtraHoja;            
     }
 
    

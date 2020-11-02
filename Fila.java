@@ -1,4 +1,3 @@
-
 /**
  *  Representa a una fila de la hoja de cálculo
  *  Toda fila tiene un identificador y en ella
@@ -10,67 +9,58 @@
  */
 public class Fila
 {
+    //ATRIBUTOS
     private String id;
     private Fecha fecha;
     private double ingresos;
     private double gastos;
-
+    //CONSTANTES
     /**
      * Constructor  
      */
-    public Fila(String id)    {
+    public Fila(String id, Fecha fecha)    {
+         this.id = id;
+         this.fecha = fecha;  //No se como inicializar esta 
+         //variable con fecha 1/1/2020
          
-
-    }
+     }
 
     /**
      * Constructor  
      */
     public Fila(String id, Fecha fecha, double ingresos, double gastos)    {
+     this.id = id;
+     this.fecha = fecha;
+     this.ingresos = ingresos;
+     this.gastos = gastos;
         
-
     }
     
     /**
      * accesor para el id de la fila
      */
-    public String getId() {
-        return this.id;
-
-    }
+    public String getId(){return this.id;}
 
 
     /**
      * accesor para la fecha
      */
-    public Fecha getFecha() {
-        return this.fecha;
-
-    }
+    public Fecha getFecha(){return this.fecha;}
 
     /**
      * accesor para los ingresos
      */
-    public double getIngresos() {
-        return this.ingresos;
-
-    }
+    public double getIngresos(){return this.ingresos;}
 
     /**
      * accesor para los gastos
      */
-    public double getGastos() {
-        return this.gastos;
-
-    }
+    public double getGastos(){return this.gastos;}
 
     /**
      * calcula y devuelve el beneficio
      */
-    public double getBeneficio() {
-        return this.ingresos - this.gastos;
-
-    }
+    public double getBeneficio(){ return this.ingresos - this.gastos;}
     
     /**
      * obtiene una copia idéntica a la fila actual.
@@ -78,7 +68,9 @@ public class Fila
      * 
      */
     public Fila duplicar() {
-       return null;
+        Fila copiaFila = new Fila(getId(), getFecha(), getIngresos(),
+        getGastos());
+       return copiaFila;
 
     }
 
@@ -87,7 +79,8 @@ public class Fila
      * (leer enunciado)
      */
     public String toString() {
-      return null;
+      return (getId() + getFecha() + getIngresos() +
+        getGastos());
 
     }
 

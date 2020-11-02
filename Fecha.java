@@ -6,10 +6,11 @@
  */
 public class Fecha
 {
+    //ATRIBUTOS
     private int dia;
     private int mes;
     private int año;
-
+    //CONSTANTES
     /**
      * constructor  
      */
@@ -24,58 +25,41 @@ public class Fecha
     /**
      * accesor para  el día   
      */
-    public int getDia()
-    {
-        return dia;
-    }
+    public int getDia(){return dia;}
 
     /**
      * accesor para  el mes 
      */
-    public int getMes()
-    {
-        return mes;
-    }
+    public int getMes(){return mes;}
 
     /**
      * accesor para  el año  
      */
-    public int getAño()
-    {
-        return año;
-    }
+    public int getAño(){return año;}
 
     /**
      * mutador para el dia
      */
-    public void setDia(int dia)
-    {
-        this.dia = dia;
-    }
+    public void setDia(int dia){this.dia = dia;}
 
     /**
      * mutador para el mes
      */
-    public void setMes(int mes)
-    {
-        this.mes = mes;
-    }
+    public void setMes(int mes){this.mes = mes;}
 
     /**
      * mutador para el año
      */
-    public void setAño(int año)
-    {
-        this.año = año;
-    }
+    public void setAño(int año){ this.año = año;}
 
 
     /**
      * Devuelve una copia exacta al objeto actual
      */
     public Fecha obtenerCopia() {
-         return null;
-
+        Fecha copiaFecha = new Fecha(this.dia, this.mes, this.año);
+        return null;
+         
     }
 
     /**
